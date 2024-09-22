@@ -21,6 +21,25 @@
     border: none;
 }
 
+#btn-load,
+#btn-load2 {
+    width: 200px;
+}
+
+.box,
+.box2 {
+    display: none;
+}
+
+.box:nth-child(1),
+.box:nth-child(2),
+.box:nth-child(3),
+.box2:nth-child(1),
+.box2:nth-child(2),
+.box2:nth-child(3) {
+    display: block;
+}
+
 .card:hover {
     -webkit-box-shadow: 2px 10px 54px -20px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 10px 54px -20px rgba(0, 0, 0, 0.75);
