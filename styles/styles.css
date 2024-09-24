@@ -115,6 +115,120 @@ header .active,
     box-shadow: 2px 10px 54px -20px rgba(0, 0, 0, 0.75);
 }
 
+/* Image Comparison Slider */
+.explore .wrapper {
+    position: relative;
+    height: 363px;
+    width: 100%;
+    border: 7px solid #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.explore .wrapper .images {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.explore .wrapper .images .img-1 {
+    height: 100%;
+    width: 100%;
+    background: url(../images/paisagem.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.explore .wrapper .images .img-2 {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: url(../images/japao.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.explore .wrapper .slider {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.explore .wrapper .slider input {
+    width: 100%;
+    outline: none;
+    background: none;
+    -webkit-appearance: none;
+}
+
+.explore .wrapper .slider input::-webkit-slider-thumb {
+    cursor: col-resize;
+    height: 349px;
+    background-color: none;
+    width: 3px;
+    -webkit-appearance: none;
+}
+
+.explore .wrapper .slider .drag-line {
+    width: 3px;
+    height: 349px;
+    position: absolute;
+    left: 49.85%;
+    pointer-events: none;
+}
+
+.explore .wrapper .slider .drag-line::before,
+.explore .wrapper .slider .drag-line::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 155px;
+    background-color: #fff;
+}
+
+.explore .wrapper .slider .drag-line::before {
+    top: 0;
+}
+
+.explore .wrapper .slider .drag-line::after {
+    bottom: 0;
+}
+
+.explore .wrapper .slider .drag-line span {
+    width: 42px;
+    height: 42px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.explore .wrapper .slider .drag-line span::before,
+.explore .wrapper .slider .drag-line span::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    border: 10px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.explore .wrapper .slider .drag-line span::before {
+    left: 40%;
+    border-left-color: #fff;
+}
+
+.explore .wrapper .slider .drag-line span::after {
+    left: 60%;
+    border-top-color: #fff;
+}
+
+/* Fim Image Comparison Slider */
+
 .img01 {
     width: 100%;
     height: 420px;
@@ -172,6 +286,67 @@ header .active,
     color: #fff;
 }
 
+/* Infinite Scroll */
+.parceiros .wrapper {
+    width: 100%;
+    max-width: 85%;
+    margin-inline: auto;
+    position: relative;
+    height: 200px;
+    margin-top: 5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0));
+}
+
+.parceiros .item {
+    width: 200px;
+    height: 200px;
+    border-radius: 6px;
+    position: absolute;
+    text-align: center;
+    line-height: 100px;
+    color: black;
+    left: calc(230px * 5);
+    /* distância de cada item */
+    animation-name: scrollleft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Duração * Delay * -1 */
+
+.parceiros .item1 {
+    animation-delay: calc(30s / 5 * (5 - 1) * -1);
+}
+
+.parceiros .item2 {
+    animation-delay: calc(30s / 5 * (5 - 2) * -1);
+}
+
+.parceiros .item3 {
+    animation-delay: calc(30s / 5 * (5 - 3) * -1);
+}
+
+.parceiros .item4 {
+    animation-delay: calc(30s / 5 * (5 - 4) * -1);
+}
+
+.parceiros .item5 {
+    animation-delay: calc(30s / 5 * (5 - 5) * -1);
+}
+
+@keyframes scrollleft {
+    to {
+        left: -200px;
+    }
+}
+/* End Infinite Scroll */
+
 .footer-icons {
     font-size: 24px;
     color: #ccc;
@@ -208,7 +383,7 @@ footer ul li .nav-link:hover {
         top: 0;
         width: 100%;
         height: 420px;
-        background-color: red;
+        background-color: #fff;
         border-radius: 20px;
     }
 }
