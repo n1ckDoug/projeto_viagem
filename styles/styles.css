@@ -237,12 +237,7 @@ header .active,
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 20px;
-    /* transition: all 1s ease; */
 }
-
-/* .img01:hover {
-    background-size: 250%;
-} */
 
 .img02 {
     width: 100%;
@@ -316,6 +311,10 @@ header .active,
     animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+}
+
+.parceiros .item p {
+    color: purple;
 }
 
 /* Duração * Delay * -1 */
@@ -415,5 +414,13 @@ footer ul li .nav-link:hover {
 
     .busca-email {
         width: 100%;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    footer .entre_em_contanto {
+        justify-content: center;
     }
 }
